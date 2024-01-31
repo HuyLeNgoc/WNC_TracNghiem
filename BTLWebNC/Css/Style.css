@@ -1,0 +1,414 @@
+﻿:root {
+    --orange: #ffa500;
+}
+
+* {
+    font-family: arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-transform: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /*transition: all .1s linear;*/
+}
+
+::selection {
+    background: var(--orange);
+    color: #fff;
+}
+
+html {
+    font-size: 55%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #ffc04d;
+    padding: 1rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+    .btn:hover {
+        background: #ffa500;
+    }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0rem 10%;
+    background: #404040;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    header .logo {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+        header .logo span {
+            color: var(--orange);
+        }
+
+    header .navbar a {
+        float: left;
+        color: #fff;
+        font-size: 1.6rem;
+        margin: 1.5rem;
+    }
+
+    header .navbar {
+        margin-right: 35%;
+    }
+
+    /* Phần drop down menu bài thi trắc nghiệm*/
+    header .dropdown {
+        display: inline-block;
+    }
+
+    header .navbar a:hover {
+        color: var(--orange);
+    }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    margin-top: 6rem;
+    min-width: 25%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+header .dropdown-content a {
+    color: black;
+    float: none;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    padding: 1.2rem;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #f2f2f2;
+}
+
+/* Phần xử lý khi click sẽ xuất hiện drop down content */
+.show {
+    display: block;
+}
+
+/* Phần xử lý tài khoản */
+header .dropdown-account {
+    display: inline-block;
+    font-size: 1.6rem;
+}
+
+.dropdown-content-account {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    margin-top: 2rem;
+    min-width: 20%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+header .dropdown-content-account a {
+    color: black;
+    float: none;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    padding: 1.3rem;
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+header .icons .dropdown-account .drop-btn {
+    color: #fff;
+}
+
+    header .icons .dropdown-account .drop-btn:hover {
+        color: var(--orange);
+    }
+
+header .icons .dropdown-account .dropdown-content-account a:hover {
+    color: var(--orange);
+    background-color: #f2f2f2;
+}
+
+/* Phần xử lý khi click sẽ xuất hiện drop down content tài khoản */
+.show-account {
+    display: block;
+}
+
+/* Phần tìm kiếm và đăng nhập */
+header .icons i {
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+header .icons #search-btn {
+    margin-right: 3rem;
+}
+
+header .icons span {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-right: .5rem;
+}
+
+header .icons #login-btn {
+    margin-right: .5rem;
+}
+
+header .icons i:hover {
+    color: var(--orange);
+}
+
+header .search-bar-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem 1rem;
+    background: #333;
+    border-top: .1rem solid rgba(255, 255, 255, .2);
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+    header .search-bar-container.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .search-bar-container #search-bar {
+        width: 100%;
+        padding: 1rem;
+        text-transform: none;
+        color: #333;
+        font-size: 1.5rem;
+        border-radius: .3rem;
+    }
+
+
+#menu-bar {
+    color: #fff;
+    border: .1rem solid #fff;
+    border-radius: .6rem;
+    font-size: 2rem;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.image-section img {
+    margin-top: 5rem;
+    height: 60rem;
+    width: 100%;
+    object-fit: fill;
+}
+
+.title-head-exam h3 {
+    font-size: 2.5rem;
+    color: #3366ff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 8rem;
+}
+
+/* Phần đề thi trắc nghiệm trang chủ*/
+.exams {
+    padding: 0 10%;
+    font-size: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+}
+
+    .exams .box-container {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        gap: 4rem;
+    }
+
+        .exams .box-container .box {
+            border-radius: .3rem;
+            transition: transform .3s;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        }
+
+            .exams .box-container .box:hover {
+                transform: scale(1.1, 1.1);
+            }
+
+            .exams .box-container .box .title {
+                background-color: #4d79ff;
+                color: #fff;
+                padding: 2rem 1rem;
+            }
+
+                .exams .box-container .box .title a {
+                    color: #fff;
+                }
+
+            .exams .box-container .box .details {
+                margin: 2rem 3rem;
+            }
+
+span {
+    color: #3366ff;
+}
+
+.exams .box-container .box .detail-btn {
+    background-color: #ff751a;
+    width: 40%;
+    padding: 1rem 1rem;
+    margin: 1rem 2rem;
+    border-radius: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+    .exams .box-container .box .detail-btn:hover {
+        background-color: #e65c00;
+    }
+
+
+
+/*Phần footer */
+.footer {
+    background-color: #404040;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0rem 10%;
+    width: 100%;
+    color: white;
+    z-index: 1000;
+}
+
+    .footer .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+        .footer .box-container .box {
+            padding: 0rem;
+            flex: 1 1 20rem;
+        }
+
+            .footer .box-container .box h3 {
+                font-size: 1.7rem;
+                padding: 1rem 0;
+                color: #fff;
+            }
+
+            .footer .box-container .box p {
+                font-size: 1.5rem;
+                padding: 0rem 0;
+                color: #fff;
+            }
+
+            .footer .box-container .box a {
+                display: block;
+                font-size: 1.5rem;
+                padding: 1.2rem 0;
+                color: #fff;
+            }
+
+            .footer .box-container .box i {
+                display: inline-block;
+                font-size: 2rem;
+                padding-top: 2rem;
+                padding-right: 3rem;
+            }
+
+    .footer .credit {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: normal;
+        color: #fff;
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+    }
+
+
+
+/* phần responsive */
+@media (max-width: 768px) {
+    html {
+        font-size: 46%
+    }
+
+    #menu-bar {
+        display: initial;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        right: 0;
+        left: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+        header .navbar.active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+
+        header .navbar .home {
+            display: block;
+            float: none;
+            border-radius: .4rem;
+            color: #000000;
+            padding: 1.3rem;
+            margin: .5rem 0;
+            background-color: #f2f2f2;
+        }
+
+        header .navbar .dropdown {
+            background-color: #f2f2f2;
+            border-radius: .4rem;
+            width: 100%;
+        }
+
+            header .navbar .dropdown .drop-btn {
+                color: #000000;
+            }
+
+            header .navbar .dropdown .dropdown-content {
+                position: relative;
+            }
+
+    .exams .box-container {
+        grid-template-columns: auto;
+    }
+}

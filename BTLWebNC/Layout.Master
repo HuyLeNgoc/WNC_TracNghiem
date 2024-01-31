@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.Master.cs" Inherits="BTLWebNC.Site1" %>
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thi Trắc Nghiệm Trực Tuyến</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/Style.css">
+</head>
+<body>
+    <header id="header">
+
+        <div id="menu-bar" class="fa fa-bars"></div>
+
+        <a href="TrangChu.aspx" class="logo"><span>TTD</span>exam</a>
+
+        <nav class="navbar">
+            <a href="TrangChu.aspx" class="home">Trang chủ</a>
+            <div class="dropdown">
+                <a href="#" class="drop-btn" onclick="dropContent()">Bài thi trắc nghiệm
+                    <i class="fa fa-angle-down"></i>
+                </a>
+                <div id="dropDownContent" class="dropdown-content">
+                    <a href="#">Kiểm tra toán 15p</a>
+                    <a href="#">Kiểm tra văn 45p</a>
+                    <a href="#">Kiểm tra tiếng anh 45p</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="icons">
+            <i class="fa fa-search" id="search-btn" onclick="search()"></i>
+            <div class="dropdown-account" id="account" runat="server">
+            </div>
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placeholder="Tìm kiếm...">
+            <label for="seaech-bar"></label>
+        </form>
+
+    </header>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    <!-- Phần footer -->
+    <footer class="footer">
+
+        <div class="box-container">
+            <div class="box">
+                <h3>Về chúng tôi</h3>
+                <p><i class="fa-solid fa-phone"></i>0901234544</p>
+                <p><i class="fa-solid fa-envelope"></i>ttdexam@gmail.com</p>
+            </div>
+            <div class="box">
+                <h3>Hướng dẫn</h3>
+                <a href="">Điều khoản sử dụng</a>
+                <a href="">Hướng dẫn trả lời câu hỏi</a>
+                <a href="">Hướng dẫn gửi câu hỏi</a>
+            </div>
+            <div class="box">
+                <h3>Theo dõi chúng tôi</h3>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </div>
+        </div>
+        <h1 class="credit">| All rights reserved !</h1>
+    </footer>
+    <script src="JS/script.js"></script>
+
+
+</body>
+</html>
